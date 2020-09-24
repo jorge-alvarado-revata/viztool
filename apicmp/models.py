@@ -23,7 +23,7 @@ class Area(models.Model):
 
 
     def __str__(self):
-        return '{}'.format(self.id)
+        return '{}-{}'.format(self.numeral, self.nombre)
     
 
 class Programa(models.Model):
