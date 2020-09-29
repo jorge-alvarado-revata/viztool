@@ -80,7 +80,7 @@ class PesoU(models.Model):
     min = models.IntegerField()
     max = models.IntegerField()
     area = models.ForeignKey(Area, blank=True, null=True, on_delete=models.CASCADE)    
-    programau = models.ForeignKey(ProgramaU, blank=True, null=True, on_delete=models.CASCADE)
+    programau = models.ForeignKey(ProgramaU, blank=True, related_name='pesosu', null=True, on_delete=models.CASCADE)
     class Meta:
         verbose_name_plural = "PesosU"
 

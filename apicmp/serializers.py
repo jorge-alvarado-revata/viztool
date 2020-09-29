@@ -3,6 +3,9 @@ from .models import Grupo
 from .models import Area
 from .models import Programa
 from .models import Peso
+from .models import PesoU
+from .models import ProgramaU
+from .models import Universidad
 
 class AreaSerializer(serializers.ModelSerializer):
   class Meta:
@@ -29,4 +32,20 @@ class ProgramaSerializer(serializers.ModelSerializer):
     model = Programa
     fields = ['id', 'nombre', 'pesos']
 
+class UniversidadSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Universidad
+    fields = '__all__'
+  
 
+class PesoUSerializer(serializers.ModelSerializer):
+
+  class Meta:
+    model = PesoU
+    fields = ['id', 'min', 'max', 'area']  
+
+class ProgramaUSerializer(serializers.ModelSerializer): 
+  pesosu =  PesoUSerializer(many=True, read_only=True)
+  class Meta:
+    model = ProgramaU
+    fields = ['id', 'nombre', 'universidad', 'pesosu']
