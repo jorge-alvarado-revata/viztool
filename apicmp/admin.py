@@ -27,7 +27,7 @@ class ProgramaUAdmin(admin.ModelAdmin):
     list_display = ('id', 'nombre', 'universidad',)
 
 class PesoUAdmin(admin.ModelAdmin):
-    list_display = ('id', 'min','max',)
+    list_display = ('id', 'area','min','max','programau',)
 
 class PaisAdmin(admin.ModelAdmin):
     list_display = ('id', 'nombre', )
